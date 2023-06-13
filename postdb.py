@@ -39,6 +39,6 @@ def view():
 
 
 createTable()
-# insert('book',10,15.50)
+insert('cup',10,50)
 
 print(view())
