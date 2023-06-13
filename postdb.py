@@ -31,12 +31,12 @@ def delete(item):
     db.commit()
     db.close()
 
-# def update(item,qty,price):
-#     db = psycopg2.connect("dbname='db' user='postgres' host='localhost' password='abdu123' port='5432'")
-#     cur = db.cursor()
-#     cur.execute("UPDATE store SET quantity=?,price=?  WHERE item=?",(qty,price,item))
-#     db.commit()
-#     db.close()
+def update(item,qty,price):
+    db = psycopg2.connect("dbname='db' user='postgres' host='localhost' password='abdu123' port='5432'")
+    cur = db.cursor()
+    cur.execute("UPDATE store SET quantity=%s,price=%s  WHERE item=%s",(qty,price,item))
+    db.commit()
+    db.close()
 
 
 createTable()
