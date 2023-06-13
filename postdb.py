@@ -16,13 +16,14 @@ def insert(item,qty,price):
     db.commit()
     db.close()
 
-# def view():
-#     db = psycopg2.connect("dbname='db' user='postgres' host='localhost' password='abdu123' port='5432'")
-#     cur = db.cursor()
-#     cur.execute('SELECT * FROM store')
-#     rows = cur.fetchall()
-#     db.close()
-#     return rows
+def view():
+    db = psycopg2.connect("dbname='db' user='postgres' host='localhost' password='abdu123' port='5432'")
+    cur = db.cursor()
+    cur.execute('SELECT * FROM store')
+    rows = cur.fetchall()
+    db.close()
+    return rows
+
 # def delete(item):
 #     db = psycopg2.connect("dbname='db' user='postgres' host='localhost' password='abdu123' port='5432'")
 #     cur = db.cursor()
@@ -38,6 +39,6 @@ def insert(item,qty,price):
 
 
 createTable()
-insert('book',10,15.50)
+# insert('book',10,15.50)
 
-# print(view())
+print(view())
