@@ -24,12 +24,13 @@ def view():
     db.close()
     return rows
 
-# def delete(item):
-#     db = psycopg2.connect("dbname='db' user='postgres' host='localhost' password='abdu123' port='5432'")
-#     cur = db.cursor()
-#     cur.execute("DELETE FROM store WHERE item=?",(item,))
-#     db.commit()
-#     db.close()
+def delete(item):
+    db = psycopg2.connect("dbname='db' user='postgres' host='localhost' password='abdu123' port='5432'")
+    cur = db.cursor()
+    cur.execute("DELETE FROM store WHERE item=%s",(item,))
+    db.commit()
+    db.close()
+
 # def update(item,qty,price):
 #     db = psycopg2.connect("dbname='db' user='postgres' host='localhost' password='abdu123' port='5432'")
 #     cur = db.cursor()
@@ -40,5 +41,6 @@ def view():
 
 createTable()
 insert('cup',10,50)
+
 
 print(view())
